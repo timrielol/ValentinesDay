@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff0f3;
+    font-family: 'Arial', sans-serif;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3x3 Raster */
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+    border: 5px solid #ff4d6d;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 100px;
+    height: 100px;
+    background-image: url(TimIre.jpg); 
+    background-size: 300px 300px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.empty {
+    background: #ffe5ec;
+    cursor: default;
+}
+/* Versteckt das Fenster am Anfang */
+.hidden {
+    display: none;
+}
+
+#win-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    
+    /* WICHTIG: Standardmäßig auf none setzen */
+    display: none; 
+    
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.message-content {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 3px solid #ff4d6d;
+}
+
+.message-content h2 {
+    color: #ff4d6d;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
